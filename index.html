@@ -73,7 +73,10 @@
             <a href="#pricing" class="btn btn-secondary btn-lg">Buy New</a>
           </div>
           <div class="col-md-5 text-center d-none d-md-block">
-            <img src="/assets/ebook-cover.png" class="img-fluid" alt="ebook" />
+            <!-- tooltip -->
+            <span class="tt" data-bs-parent="buttom" title="Net Ninja Book Cover">
+              <img src="/assets/ebook-cover.png" class="img-fluid" alt="ebook" />
+            </span>
           </div>
         </div>
       </div>
@@ -148,7 +151,7 @@
     <!-- card-end -->
 
     <!-- topics -->
-    <section id="#topics">
+    <section id="topics">
       <div class="container-md">
         <div class="text-center">
           <h2>Inside the Book...</h2>
@@ -346,7 +349,120 @@
       </div>
 
     </section>
+    <!-- contact from -->
+    <!-- form-control form-label form-select input-groep input-group-text -->
+    <section id="contact">
+      <div class="container-lg">
+        <div class="text-center">
+          <h2>Get in Touch</h2>
+          <p class="lead">Questions to ask? Fill out from to contect me directly...</p>
+        </div>
 
+        <div class="row justify-content-center mt-5">
+          <div class="col-lg-6">
+            <form>
+              <label for="email" class="form-label">Email</label>
+              <div class="input-group mb-4">
+                <span class="input-group-text">
+                  <i class="bi bi-envelope-fill"></i>
+                </span>
+                <input type="email" class="form-control" id="email" placeholder="e.g.mario@example.com">
+                <!-- tooltips -->
+                <span class="input-group-text">
+                  <span class="tt" data-bs-placement="button" title="Enter an email address we can reply to...">
+                    <i class="bi bi-question-circle text-muted"></i>
+                  </span>
+                </span>
+              </div>
+
+              <label for="name" class="form-label">Name</label>
+              <div class="input-group mb-4">
+                <span class="input-group-text">
+                  <i class="bi bi-person-fill"></i>
+                </span>
+                <input type="name" class="form-control" id="name" placeholder="e.g.Mario">
+                <!-- tooltips -->
+                <span class="input-group-text">
+                  <span class="tt" data-bs-placement="button" title="Pretty self explanatory reply...">
+                    <i class="bi bi-question-circle text-muted"></i>
+                  </span>
+                </span>
+              </div>
+
+              <label for="subject" class="form-label">What is your question about?</label>
+              <div class="input-group mb-4">
+                <span class="input-group-text">
+                  <i class="bi bi-chat-right-dots-fill"></i>
+                </span>
+                <select  id="subject" class="form-select">
+                  <option value="pricing" selected>Pricing query</option>
+                  <option value="content" >Content query</option>
+                  <option value="other">Other query</option>
+                </select>
+              </div>
+
+              <div class="form-floating my-5">
+                <textarea name="" id="query" style="height: 140px;" class="form-control"></textarea>
+                <label for="query">Your query....</label>
+              </div>
+
+              <div class="mb-4 text-center">
+                <button type="submit" class="btn btn-secondary form-control">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- get updates/ modal trigger -->
+    <section class="bg-light">
+      <div class="container">
+        <div class="text-center">
+          <h2>Stay in The Loop</h2>
+          <p class="lead">Get the latest updates as they happen....</p>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-md-8 text-center">
+            <p class="text-muted my-4">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+               Reiciendis, obcaecati doloribus numquam iure explicabo deserunt perspiciatis culpa
+                nobis esse quas repudiandae! Quasi aspernatur distinctio necessitatibus omnis 
+                dolorum, sint doloremque et magni quisquam ullam totam vitae officiis minus dolorem odio animi?
+              </p>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#reg-modal">Register for Updates</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- modal itself -->
+    <div class="modal fade" id="reg-modal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modal-title">Get the Latest Updates</h5>
+            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+
+          </div>
+          <div class="modal-body">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ipsam debitis aspernatur earum accusantium quisquam ex ab delectus nisi assumenda!</p>
+            <label for="modal-email" class="form-label">Your email address:</label>
+            <input type="email" class="form-control" id="modal-email" placeholder="e.g.mario@example.com">
+            <div class="modal-footer">
+              <button class="btn btn-primary">Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const tooltips = document.querySelectorAll('.tt')
+      tooltips.forEach(t=>{
+        new bootstrap.Tooltip(t)
+      })
+    </script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
